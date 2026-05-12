@@ -1,0 +1,124 @@
+
+:root {
+    --nucleon-orange: #f26522;
+    --nucleon-green: #3e5c3f;
+    --bg-beige: #eeecea;
+    --card-white: #f9f9f9;
+    --text-dark: #333;
+    --input-bg: #eeeeee;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: var(--bg-beige);
+    color: var(--text-dark);
+}
+
+.navbar {
+    background-color: var(--nucleon-orange);
+    padding: 15px 5%;
+    color: white;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.content {
+    max-width: 750px;
+    margin: 150px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.heart-icon {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: x'#666;
+}
+
+.calculator-card {
+    background-color: var(--card-white);
+    padding: 40px;
+    border-radius: 20px;
+    display: grid;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+label {
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input {
+    background-color: var(--input-bg);
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.hint {
+    font-size: 15px;
+    color: #888888;
+    margin-top: 6px;
+}
+
+.btn-calculate {
+    grid-column: span 2;
+    background-color: var(--nucleon-green);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: filter 0.2s;
+}
+
+.btn-calculate:hover {
+    filter: brightness(1.2);
+}
