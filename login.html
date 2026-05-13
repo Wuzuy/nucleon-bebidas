@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-    <div class="logo">NUCLEON <br> BEBIDAS</div>
-    <div class="menu">
-    <a href="#">Produtos</a>
-    <a href="#">Sobre</a>
-    <a href="#"> Calculadora</a>
-    <a href="#">🛒</a>
-    <a href="#">👤</a>
-    </div> 
-</header>
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="logo-container">
+            <!-- Imagem substituindo o texto "energia" -->
+            <img src="caminho-para-sua-imagem.png" alt="Logo Nucleon" class="logo-img">
+        </div>
+        <nav class="nav-links">
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="calculadora.html">Calculadora</a>
+            <button class="icon-btn">🛒</button>
+            <button class="icon-btn">👤</button>
+        </nav>
+    </header>
 
-<main class="container">
-<div class="caixa">
-<div class="topo">
-<div class="icon">👤</div>
-<h2> ENTRAR</h2>
-</div>
-<form class="login">
+    <!-- Conteudo -->
 
-<label>E-mail</label>
-<input type="email" id="email">
+    <main class="container">
+        <div class="caixa">
+            <div class="topo">
+                <div class="icon">👤</div>
+                <h2> ENTRAR</h2>
+            </div>
+            <form class="login">
 
-<label>Senha</label>
-<input type="password" id="senha">
-<button type=submit>ENTRAR</button>
+                <label>E-mail</label>
+                <input type="email" id="email">
 
-<a href="#">Não tem conta? Cadastre-se</a>
+                <label>Senha</label>
+                <input type="password" id="senha">
+                <button type=submit>ENTRAR</button>
 
-</form>
-</div>
-</main>
+                <a href="#">Não tem conta? Cadastre-se</a>
 
+            </form>
+        </div>
+    </main>
 
+    <!-- Footer -->
 
-
-    
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="logo-branca.png" alt="Nucleon" class="footer-logo">
+                <p>Energia no seu limite. O energético que impulsiona seus resultados.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVEGAÇÃO</h4>
+                <a href="index.html">Home</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre Nós</a>
+            </div>
+            <div class="footer-col">
+                <h4>INFORMAÇÕES</h4>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <div class="footer-col">
+                <h4>CONTATO</h4>
+                <p>contato@nucleon.com.br</p>
+                <p>(11) 3000-0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nucleon Bebidas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
