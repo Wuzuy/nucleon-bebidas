@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nucleon - Calculadora de Consumo</title>
+    <link rel="stylesheet" href="styleCalc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container-nav">
+            <div class="logo">
+                <!-- Logo Laranja Nucleon Original -->
+                <svg class="logo-img" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Corpo principal da laranja -->
+                    <circle cx="128" cy="128" r="100" fill="#FFA500" stroke="#1a4d0e" stroke-width="6"/>
+                    
+                    <!-- Folhas superiores -->
+                    <ellipse cx="128" cy="50" rx="20" ry="35" fill="#4CAF50" transform="rotate(-25 128 50)"/>
+                    <ellipse cx="160" cy="65" rx="22" ry="38" fill="#7CB342" transform="rotate(35 160 65)"/>
+                    
+                    <!-- Olhos (verdes com raiva) -->
+                    <g>
+                        <!-- Olho esquerdo -->
+                        <ellipse cx="100" cy="110" rx="12" ry="16" fill="#2D5016"/>
+                        <circle cx="100" cy="110" r="6" fill="#FFFFFF"/>
+                        <circle cx="102" cy="110" r="3" fill="#000000"/>
+                        <!-- Sobrancelha esquerda -->
+                        <path d="M 85 95 Q 100 85 115 95" stroke="#2D5016" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    </g>
+                    
+                    <g>
+                        <!-- Olho direito -->
+                        <ellipse cx="156" cy="110" rx="12" ry="16" fill="#2D5016"/>
+                        <circle cx="156" cy="110" r="6" fill="#FFFFFF"/>
+                        <circle cx="158" cy="110" r="3" fill="#000000"/>
+                        <!-- Sobrancelha direita -->
+                        <path d="M 141 95 Q 156 85 171 95" stroke="#2D5016" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    </g>
+                    
+                    <!-- Boca (raivosa) -->
+                    <path d="M 105 150 L 115 165 L 128 160 L 141 165 L 151 150" stroke="#2D5016" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Espiral branca (número 6) -->
+                    <path d="M 128 128 Q 145 120 150 138 Q 145 160 128 155 Q 120 150 125 135" fill="#FFFFFF" opacity="0.9"/>
+                    
+                    <!-- Pequenos pontos de brilho -->
+                    <circle cx="95" cy="85" r="4" fill="#FFFFFF" opacity="0.7"/>
+                    <circle cx="160" cy="150" r="3" fill="#FFFFFF" opacity="0.6"/>
+                    
+                    <!-- Punhos (braços) -->
+                    <g>
+                        <!-- Punho esquerdo -->
+                        <ellipse cx="50" cy="140" rx="18" ry="25" fill="#FFA500" stroke="#1a4d0e" stroke-width="5"/>
+                        <path d="M 50 115 Q 40 125 45 145 Q 55 155 65 145" stroke="#1a4d0e" stroke-width="3" fill="none"/>
+                    </g>
+                    
+                    <g>
+                        <!-- Punho direito -->
+                        <ellipse cx="206" cy="140" rx="18" ry="25" fill="#FFA500" stroke="#1a4d0e" stroke-width="5"/>
+                        <path d="M 206 115 Q 216 125 211 145 Q 201 155 191 145" stroke="#1a4d0e" stroke-width="3" fill="none"/>
+                    </g>
+                </svg>
+                <span>NUCLEON</span>
+            </div>
+            <nav>
+                <a href="#">Produtos</a>
+                <a href="#">Sobre</a>
+                <a href="#" class="active">Calculadora</a>
+                <a href="#"><img src="cart-icon.png" alt="Carrinho" class="icon"></a>
+                <!-- Ícone de Usuário SVG -->
+                <a href="#">
+                    <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cabeça -->
+                        <circle cx="12" cy="8" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Corpo -->
+                        <path d="M 4 14 Q 4 14 12 17 Q 20 14 20 14 L 20 20 Q 20 22 18 22 L 6 22 Q 4 22 4 20 Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="hero-section">
+            <div class="heart-icon">
+                ❤️
+            </div>
+            <h1>Calculadora de Consumo Seguro</h1>
+            <p class="subtitle">Descubra seu IMC e o limite diário recomendado de cafeína</p>
+        </div>
+
+        <section class="calculator-card">
+            <div class="input-group">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" placeholder="Ex: 70">
+            </div>
+
+            <div class="input-group">
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" placeholder="Ex: 175">
+            </div>
+
+            <div class="input-group full-width">
+                <label for="cafeina">Cafeína já consumida hoje (mg)</label>
+                <input type="number" id="cafeina" placeholder="Ex: 160 (equivalente a 1 lata)">
+                <span class="hint">💡 Uma lata de Nucleon tem 160mg de cafeína</span>
+            </div>
+
+            <button class="btn-calculate">CALCULAR</button>
+
+            <div class="results-container" id="results" style="display: none;">
+                <div class="result-item">
+                    <h3>Seu IMC</h3>
+                    <p class="result-value" id="imc-value">--</p>
+                </div>
+                <div class="result-item">
+                    <h3>Limite Diário de Cafeína</h3>
+                    <p class="result-value" id="limite-cafeina">--</p>
+                </div>
+                <div class="result-item">
+                    <h3>Consumo Restante Hoje</h3>
+                    <p class="result-value" id="consumo-restante">--</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nucleon</h4>
+                <p>Bebida energética desenvolvida com foco em seu bem-estar e desempenho.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>📧 contato@nucleon.com.br</p>
+                <p>📞 (11) 9999-8888</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nucleon. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Selecionar elementos do DOM
+        const pesoInput = document.getElementById('peso');
+        const alturaInput = document.getElementById('altura');
+        const cafeinaInput = document.getElementById('cafeina');
+        const btnCalculate = document.querySelector('.btn-calculate');
+        const resultsContainer = document.getElementById('results');
+        const imcValue = document.getElementById('imc-value');
+        const limiteCafeina = document.getElementById('limite-cafeina');
+        const consumoRestante = document.getElementById('consumo-restante');
+
+        // Evento de clique no botão calcular
+        btnCalculate.addEventListener('click', calcular);
+
+        // Permitir calcular com Enter
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                calcular();
+            }
+        });
+
+        function calcular() {
+            // Obter valores dos inputs
+            const peso = parseFloat(pesoInput.value);
+            const altura = parseFloat(alturaInput.value);
+            const cafeina = parseFloat(cafeinaInput.value) || 0;
+
+            // Validar inputs
+            if (!peso || !altura || peso <= 0 || altura <= 0) {
+                alert('Por favor, insira valores válidos para peso e altura!');
+                return;
+            }
+
+            // Converter altura de cm para metros
+            const alturaEmMetros = altura / 100;
+
+            // Calcular IMC
+            const imc = peso / (alturaEmMetros * alturaEmMetros);
+
+            // Limite diário de cafeína é baseado no peso (4mg por kg)
+            const limiteDiarioCafeina = peso * 4;
+
+            // Cafeína restante = limite - já consumida
+            const restante = limiteDiarioCafeina - cafeina;
+
+            // Exibir resultados
+            imcValue.textContent = imc.toFixed(2);
+            limiteCafeina.textContent = limiteDiarioCafeina.toFixed(0) + ' mg';
+            
+            if (restante < 0) {
+                consumoRestante.textContent = '0 mg (limite excedido!)';
+                consumoRestante.style.color = '#e74c3c';
+            } else {
+                consumoRestante.textContent = restante.toFixed(0) + ' mg';
+                consumoRestante.style.color = '#27ae60';
+            }
+
+            // Mostrar container de resultados
+            resultsContainer.style.display = 'grid';
+
+            // Classificação do IMC (opcional)
+            console.log(classificarIMC(imc));
+        }
+
+        function classificarIMC(imc) {
+            if (imc < 18.5) return 'Abaixo do peso';
+            if (imc < 25) return 'Peso normal';
+            if (imc < 30) return 'Sobrepeso';
+            return 'Obesidade';
+        }
+
+        // Limpar inputs ao carregar a página
+        window.addEventListener('load', () => {
+            pesoInput.value = '';
+            alturaInput.value = '';
+            cafeinaInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
