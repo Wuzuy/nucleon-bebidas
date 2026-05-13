@@ -16,7 +16,7 @@
 }
 
 .logo-img {
-    height: 40px; 
+    height: 50px;
 }
 
 .nav-links {
@@ -40,6 +40,14 @@
 }
 
 /* ================= FOOTER ================= */
+.footer-logo {
+    height: 80px;
+    /* Define altura padrão */
+    margin-bottom: 15px;
+    /* Espaçamento entre a logo e o texto */
+    display: block;
+}
+
 .site-footer {
     background-color: #1c2331;
     color: #ffffff;
