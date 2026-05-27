@@ -6,29 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nucleon - Calculadora de Consumo</title>
     <link rel="stylesheet" href="styleCalc.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <header class="navbar">
-        <div class="container-nav">
-            <div class="logo">
-                <img src="logo-nucleon.png" alt="" class="logo-img">
-                <span>NUCLEON</span>
-            </div>
-            <nav>
-                <a href="#">Produtos</a>
-                <a href="#">Sobre</a>
-                <a href="#" class="active">Calculadora</a>
-                <a href="#"><img src="cart-icon.png" alt="Carrinho" class="icon"></a>
-                <a href="#"><img src="user-icon.png" alt="Perfil" class="icon"></a>
-            </nav>
+    <!-- Topbar -->
+
+    <header class="topbar">
+        <div class="logo-container">
+            <!-- Imagem substituindo o texto "energia" -->
+            <img src="images/logo.png" alt="Logo Nucleon" class="logo-img">
         </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Sobre</a>
+            <a href="calculadora.html">Calculadora</a>
+            <a href="#"><button class="icon-btn">🛒</button></a>
+            <button class="icon-btn"><a href="login.html">👤</a></button>
+        </nav>
     </header>
+
 
     <main class="content">
         <div class="hero-section">
             <div class="heart-icon">
+                ❤️
             </div>
             <h1>Calculadora de Consumo Seguro</h1>
             <p class="subtitle">Descubra seu IMC e o limite diário recomendado de cafeína</p>
@@ -52,9 +57,132 @@
             </div>
 
             <button class="btn-calculate">CALCULAR</button>
+
+            <div class="results-container" id="results" style="display: none;">
+                <div class="result-item">
+                    <h3>Seu IMC</h3>
+                    <p class="result-value" id="imc-value">--</p>
+                </div>
+                <div class="result-item">
+                    <h3>Limite Diário de Cafeína</h3>
+                    <p class="result-value" id="limite-cafeina">--</p>
+                </div>
+                <div class="result-item">
+                    <h3>Consumo Restante Hoje</h3>
+                    <p class="result-value" id="consumo-restante">--</p>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="Nucleon" class="footer-logo">
+                <p>Energia no seu limite. O energético que impulsiona seus resultados.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVEGAÇÃO</h4>
+                <a href="index.html">Home</a>
+                <a href="#">Produtos</a>
+                <a href="#">Sobre Nós</a>
+            </div>
+            <div class="footer-col">
+                <h4>INFORMAÇÕES</h4>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <div class="footer-col">
+                <h4>CONTATO</h4>
+                <p>contato@nucleon.com.br</p>
+                <p>(11) 3000-0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nucleon Bebidas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Selecionar elementos do DOM
+        const pesoInput = document.getElementById('peso');
+        const alturaInput = document.getElementById('altura');
+        const cafeinaInput = document.getElementById('cafeina');
+        const btnCalculate = document.querySelector('.btn-calculate');
+        const resultsContainer = document.getElementById('results');
+        const imcValue = document.getElementById('imc-value');
+        const limiteCafeina = document.getElementById('limite-cafeina');
+        const consumoRestante = document.getElementById('consumo-restante');
+
+        // Evento de clique no botão calcular
+        btnCalculate.addEventListener('click', calcular);
+
+        // Permitir calcular com Enter
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                calcular();
+            }
+        });
+
+        function calcular() {
+            // Obter valores dos inputs
+            const peso = parseFloat(pesoInput.value);
+            const altura = parseFloat(alturaInput.value);
+            const cafeina = parseFloat(cafeinaInput.value) || 0;
+
+            // Validar inputs
+            if (!peso || !altura || peso <= 0 || altura <= 0) {
+                alert('Por favor, insira valores válidos para peso e altura!');
+                return;
+            }
+
+            // Converter altura de cm para metros
+            const alturaEmMetros = altura / 100;
+
+            // Calcular IMC
+            const imc = peso / (alturaEmMetros * alturaEmMetros);
+
+            // Limite diário de cafeína é baseado no peso (4mg por kg)
+            const limiteDiarioCafeina = peso * 4;
+
+            // Cafeína restante = limite - já consumida
+            const restante = limiteDiarioCafeina - cafeina;
+
+            // Exibir resultados
+            imcValue.textContent = imc.toFixed(2);
+            limiteCafeina.textContent = limiteDiarioCafeina.toFixed(0) + ' mg';
+
+            if (restante < 0) {
+                consumoRestante.textContent = '0 mg (limite excedido!)';
+                consumoRestante.style.color = '#e74c3c';
+            } else {
+                consumoRestante.textContent = restante.toFixed(0) + ' mg';
+                consumoRestante.style.color = '#27ae60';
+            }
+
+            // Mostrar container de resultados
+            resultsContainer.style.display = 'grid';
+
+            // Classificação do IMC (opcional)
+            console.log(classificarIMC(imc));
+        }
+
+        function classificarIMC(imc) {
+            if (imc < 18.5) return 'Abaixo do peso';
+            if (imc < 25) return 'Peso normal';
+            if (imc < 30) return 'Sobrepeso';
+            return 'Obesidade';
+        }
+
+        // Limpar inputs ao carregar a página
+        window.addEventListener('load', () => {
+            pesoInput.value = '';
+            alturaInput.value = '';
+            cafeinaInput.value = '';
+        });
+    </script>
 </body>
 
 </html>
