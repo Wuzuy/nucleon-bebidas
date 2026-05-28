@@ -1,0 +1,269 @@
+/* STREAMING_CHUNK: Configurando variáveis e fundo específico para a página Sobre... */
+.sobre-page {
+    background-color: var(--bg);
+    padding-bottom: 60px;
+}
+
+/* --- HERO DO SOBRE --- */
+.sobre-hero {
+    background: linear-gradient(135deg, #0B1726, #1a2a3a);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+}
+
+.badge-dark {
+    display: inline-block;
+    background: rgba(255, 123, 0, 0.2);
+    color: var(--orange);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 123, 0, 0.5);
+}
+
+.sobre-hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.sobre-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* STREAMING_CHUNK: Estilizando o Grid de Missão, Visão e Valores... /
+/ --- GRID MISSÃO, VISÃO, VALORES --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 30px 24px;
+    text-align: center;
+    border-bottom: 4px solid var(--orange);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.about-card h4 {
+    color: var(--dark);
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.about-card p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* STREAMING_CHUNK: Criando a seção bege suave e o Canvas estratégico (Cartões coloridos)... /
+/ --- SEÇÃO CANVAS (ESTRUTURA DE VALOR) --- / */
+.bg-soft-section {
+background-color: #fcf6f0; 
+padding: 60px 20px;
+margin-top: 40px;
+}
+
+.canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.canvas-card {
+    border-radius: 12px;
+    padding: 24px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.canvas-card:hover {
+    transform: scale(1.02);
+}
+
+.canvas-header {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.canvas-list {
+    list-style: none;
+    padding: 0;
+}
+
+.canvas-list li {
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.canvas-list li::before {
+    content: '•';
+    font-weight: bold;
+}
+
+/* Cores específicas dos cartões (Baseadas na sua imagem de referência) */
+.card-green {
+    background-color: #10b981;
+}
+
+.card-pink {
+    background-color: #ec4899;
+}
+
+.card-blue {
+    background-color: #0ea5e9;
+}
+
+.card-purple {
+    background-color: #8b5cf6;
+}
+
+/* STREAMING_CHUNK: Estilizando a faixa laranja de diferenciais competitivos e métricas... /
+/ --- SEÇÃO DIFERENCIAIS COMPETITIVOS (FAIXA LARANJA) --- */
+.differentials-section {
+    background-color: var(--orange);
+    color: #fff;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.diff-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.diff-content h2,
+.metrics-content h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.diff-list {
+    list-style: none;
+    padding: 0;
+}
+
+.diff-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.diff-list li span {
+    background: #fff;
+    color: var(--orange);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* Grid de Métricas (Lado direito da faixa laranja) */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.metric-box {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.metric-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* STREAMING_CHUNK: Adicionando responsividade para telas menores... /
+/ --- RESPONSIVIDADE --- */
+@media(max-width: 900px) {
+    .diff-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-hero h1 {
+        font-size: 32px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
