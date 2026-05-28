@@ -1,0 +1,97 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 300px);
+    background-color: #fdf5e6;
+    padding: 50px 20px;
+}
+
+.auth-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.auth-header {
+    background-color: #f58220;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.auth-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.auth-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #f58220;
+}
+
+.btn-submit {
+    background-color: #387b3b;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-submit:hover {
+    background-color: #2b612e;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-links a {
+    color: #f58220;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Aviso de idade no cadastro */
+.warning-text {
+    font-size: 11px;
+    color: #f58220;
+    margin-top: 2px;
+    font-weight: 500;
+}
