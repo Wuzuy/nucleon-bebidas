@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Carrinho - Nucleon</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleIndex.css">
+  <link rel="stylesheet" href="loja.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo Nucleon" class="logo-img">
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="carrinho.html"><button class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></button></a>
+      <a href="login.html"><button class="icon-btn"><i class="fa-solid fa-user"></i></button></a>
+    </nav>
+  </header>
+
+  <main class="container-loja">
+    <h2 style="margin-bottom: 24px;">MEU CARRINHO</h2>
+    
+    <div class="grid-carrinho">
+      
+      <!-- Lista de Itens no Carrinho -->
+      <div class="lista-itens">
+        <div class="carrinho-item">
+          <div class="carrinho-img"><i class="fa-solid fa-bolt" style="color: #6b21a8;"></i></div>
+          <div class="carrinho-info">
+            <h4>Nucleon Açaí</h4>
+            <p>Sabor: Açaí</p>
+            <div class="controle-qtd" style="margin-bottom: 0;">
+              <button class="qtd-btn" style="width: 28px; height: 28px;">-</button>
+              <span style="font-weight: 600; width: 20px; text-align: center; font-size: 14px;">1</span>
+              <button class="qtd-btn" style="width: 28px; height: 28px;">+</button>
+            </div>
+          </div>
+          <div style="font-weight: 700; color: var(--orange, #FF7B00); font-size: 18px;">
+            R$ 8.90
+          </div>
+          <button style="background: none; border: none; color: #dc2626; cursor: pointer; font-size: 18px; margin-left: 15px;">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Resumo do Pedido -->
+      <div class="resumo-pedido">
+        <h3 style="margin-bottom: 20px;">RESUMO DO PEDIDO</h3>
+        
+        <div class="cashback-box" style="padding: 12px;">
+          <span style="font-size: 11px; color: #1F7A3A;">Você vai ganhar</span>
+          <strong style="font-size: 16px;">R$ 0.89</strong>
+          <span style="font-size: 10px; color: #6b7280;">em cashback nesta compra</span>
+        </div>
+
+        <div class="linha-resumo">
+          <span>Subtotal</span>
+          <span>R$ 8.90</span>
+        </div>
+        <div class="linha-resumo">
+          <span>Frete</span>
+          <span>Calcular</span>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <span style="font-size: 12px; font-weight: 600;"><i class="fa-solid fa-location-dot"></i> Calcular Frete</span>
+            <div class="input-cep">
+                <input type="text" placeholder="CEP">
+                <button type="button">OK</button>
+            </div>
+        </div>
+
+        <div class="linha-total">
+          <span>TOTAL</span>
+          <span style="color: var(--orange, #FF7B00);">R$ 8.90</span>
+        </div>
+
+        <button class="btn-comprar-grande"><i class="fa-solid fa-check"></i> FINALIZAR COMPRA</button>
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="produtos.html" style="color: var(--orange, #FF7B00); font-size: 12px; text-decoration: none; font-weight: 600;">Continuar comprando</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="images/logo.png" alt="Nucleon" class="footer-logo">
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
